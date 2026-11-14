@@ -1,0 +1,417 @@
+/* ==========================================================================
+   P10: Portfolio Header & Footer with Advanced Flexbox
+   Friendly beginner colors with advanced Flexbox mechanisms
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #2b3a4a;
+  background-color: #f0f4f8; /* Soft blue-gray */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Stretches body so footer stays at bottom */
+}
+
+/* ==========================================================================
+   1. ADVANCED FLEXBOX HEADER
+   ========================================================================== */
+.portfolio-header {
+  background-color: #1a365d; /* Dark navy blue */
+  border-bottom: 4px solid #3182ce; /* Bright blue accent */
+  padding: 12px 20px;
+  color: #ffffff;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center; /* Cross-axis centering for all direct items */
+  gap: 20px;
+  flex-wrap: wrap; /* Allows wrapping gracefully on smaller screens */
+}
+
+/* Group 1: Identity */
+.header-identity {
+  flex-shrink: 0; /* Prevents logo from shrinking when space is tight */
+  order: 1;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+.brand-badge {
+  background-color: #ecc94b; /* Gold/yellow */
+  color: #1a365d;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.brand-name strong {
+  color: #63b3ed; /* Light sky blue */
+}
+
+/* Group 2: Search Bar (Flex-Grow) */
+.header-search {
+  order: 2;
+  flex-grow: 1; /* Expands to fill free horizontal space */
+  max-width: 380px; /* Constrains it so it doesn't take over completely */
+  display: flex; /* Nested flex container for input + button */
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #4a5568;
+}
+
+.header-search input {
+  flex-grow: 1; /* Input expands inside the search form */
+  padding: 8px 12px;
+  border: none;
+  font-size: 0.9rem;
+  outline: none;
+  background-color: #2d3748;
+  color: #ffffff;
+}
+
+.header-search input::placeholder {
+  color: #a0aec0;
+}
+
+.header-search button {
+  background-color: #3182ce;
+  border: none;
+  padding: 0 14px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.header-search button:hover {
+  background-color: #2b6cb0;
+}
+
+/* Group 3: Navigation Links */
+.header-nav {
+  order: 3;
+  margin-left: auto; /* Advanced Flexbox trick: pushes nav & actions to the right! */
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+  align-items: center;
+}
+
+.nav-list a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.nav-list a:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Group 4: Header Actions */
+.header-actions {
+  order: 4;
+  align-self: center; /* Demonstrating cross-axis item alignment */
+}
+
+.btn-hire {
+  display: inline-block;
+  background-color: #e53e3e; /* Tomato red */
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.btn-hire:hover {
+  background-color: #c53030;
+}
+
+/* ==========================================================================
+   PAGE BODY CONTENT
+   ========================================================================== */
+.page-body {
+  flex-grow: 1; /* Ensures body takes full middle height */
+  max-width: 1200px;
+  width: 100%;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.banner-box {
+  background-color: #ffffff;
+  border: 2px solid #bee3f8;
+  border-left: 6px solid #3182ce;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.banner-box h1 {
+  font-size: 1.8rem;
+  color: #1a365d;
+  margin-bottom: 8px;
+}
+
+.banner-box p {
+  color: #4a5568;
+}
+
+.technique-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tech-card {
+  flex: 1 1 300px;
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.tech-card h3 {
+  color: #2b6cb0;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.tech-card p {
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+/* ==========================================================================
+   2. ADVANCED FLEXBOX FOOTER
+   ========================================================================== */
+.portfolio-footer {
+  background-color: #1a202c; /* Deep slate background */
+  color: #cbd5e0;
+  border-top: 4px solid #ecc94b; /* Gold top border */
+  margin-top: 40px;
+}
+
+.footer-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 30px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+/* Footer Column Proportions */
+.col-brand {
+  flex: 2 1 260px; /* Takes 2 shares of growth */
+}
+
+.col-links,
+.col-resources {
+  flex: 1 1 140px; /* Takes 1 share of growth */
+}
+
+.col-newsletter {
+  flex: 2 1 280px; /* Takes 2 shares of growth */
+}
+
+.footer-col-title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+  border-bottom: 2px solid #4a5568;
+  padding-bottom: 4px;
+}
+
+.brand-bio {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  color: #a0aec0;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background-color: #2d3748;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background-color 0.2s;
+}
+
+.social-icon:hover {
+  background-color: #3182ce;
+}
+
+/* Footer Menus */
+.footer-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-menu a {
+  color: #a0aec0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-menu a:hover {
+  color: #ecc94b;
+}
+
+/* Newsletter Nested Form */
+.col-newsletter p {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  color: #a0aec0;
+}
+
+.newsletter-form {
+  display: flex; /* Nested flex row for input and submit */
+  gap: 0;
+  margin-bottom: 6px;
+}
+
+.newsletter-form input {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border: 1px solid #4a5568;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  background-color: #2d3748;
+  color: #ffffff;
+}
+
+.newsletter-form button {
+  background-color: #ecc94b;
+  color: #1a202c;
+  font-weight: bold;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background-color: #d69e2e;
+}
+
+.form-disclaimer {
+  font-size: 0.75rem;
+  color: #718096;
+}
+
+/* Bottom Sub-Footer Bar */
+.footer-bottom {
+  background-color: #171923;
+  border-top: 1px solid #2d3748;
+  padding: 15px 20px;
+}
+
+.footer-bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #a0aec0;
+}
+
+.footer-badges {
+  display: flex;
+  gap: 8px;
+}
+
+.badge-pill {
+  background-color: #2d3748;
+  color: #63b3ed;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  border: 1px solid #4a5568;
+}
+
+/* ==========================================================================
+   ADVANCED FLEXBOX RESPONSIVE BREAKPOINT
+   Reordering elements on mobile viewports (< 840px)
+   ========================================================================== */
+@media (max-width: 840px) {
+  .header-inner {
+    justify-content: space-between;
+  }
+
+  .header-identity {
+    order: 1;
+  }
+
+  .header-actions {
+    order: 2;
+  }
+
+  .header-nav {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+    border-top: 1px solid #2d3748;
+    padding-top: 8px;
+  }
+
+  .nav-list {
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .header-search {
+    order: 4; /* Pushed to bottom full width */
+    max-width: 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P12: Portfolio Projects Grid with Advanced CSS Grid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Page Header -->
+  <header class="portfolio-header">
+    <div class="header-inner">
+      <div class="badge-title">Module 3 &bull; Project 12</div>
+      <h1>Advanced CSS Grid: Portfolio Projects Bento</h1>
+      <p class="subtitle">
+        Featuring asymmetric spans (<code>grid-column: span 2</code>, <code>grid-row: span 2</code>), 
+        fluid <code>minmax()</code> tracks, and <code>grid-auto-flow: dense</code> for hole-free packing.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Bento Grid Container -->
+  <main class="grid-wrapper">
+
+    <div class="bento-grid">
+      
+      <!-- Project 1: FEATURED HERO (Spans 2 cols, 2 rows) -->
+      <article class="bento-card card-featured card-blue">
+        <div class="card-badge">⭐ FEATURED HIGHLIGHT (2x2)</div>
+        <div class="card-visual visual-hero">
+          <svg width="100%" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="100" rx="6" fill="#1e88e5"/>
+            <circle cx="50" cy="50" r="30" fill="#bbdefb"/>
+            <rect x="100" y="30" width="160" height="12" rx="3" fill="#ffffff"/>
+            <rect x="100" y="55" width="100" height="10" rx="3" fill="#90caf9"/>
+          </svg>
+        </div>
+        <div class="card-content">
+          <h2>CloudSync Storage Dashboard</h2>
+          <p class="desc">
+            A comprehensive cloud infrastructure monitoring hub with live telemetry, automated load balancing 
+            rules, and role-based access management. Built with modular CSS Grid tracks.
+          </p>
+          <div class="metrics-row">
+            <div class="metric"><strong>99.99%</strong><span>Uptime</span></div>
+            <div class="metric"><strong>1.2ms</strong><span>Latency</span></div>
+            <div class="metric"><strong>45k+</strong><span>Users</span></div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">CSS Grid (2x2)</span>
+            <span class="tag">WebSockets</span>
+            <span class="tag">TypeScript</span>
+          </div>
+          <div class="card-links">
+            <a href="#" class="btn btn-primary">Live Dashboard &rarr;</a>
+            <a href="#" class="btn btn-outline">Source Code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2: WIDE CARD (Spans 2 cols, 1 row) -->
+      <article class="bento-card card-wide card-coral">
+        <div class="card-badge">WIDE FEATURE (2x1)</div>
+        <div class="card-content">
+          <h2>AudioFlow Waveform Synthesizer</h2>
+          <p class="desc">
+            WebAudio API sound design tool for creating 8-bit chiptunes, retro sound effects, and spatial audio reverberation.
+          </p>
+          <div class="tag-row">
+            <span class="tag">WebAudio</span>
+            <span class="tag">CSS Grid Span 2</span>
+            <span class="tag">Canvas API</span>
+          </div>
+          <div class="card-links">
+            <a href="#" class="btn btn-primary">Try Studio &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3: TALL CARD (Spans 1 col, 2 rows) -->
+      <article class="bento-card card-tall card-green">
+        <div class="card-badge">TALL METRIC (1x2)</div>
+        <div class="card-content">
+          <h2>DevDaily CLI Tool</h2>
+          <p class="desc">
+            Terminal productivity booster for Git commit summaries, PR linting, and automated changelog publishing.
+          </p>
+          <div class="cli-mockup">
+            <code>$ npx devdaily audit<br>&check; 0 vulnerabilities<br>&check; Clean semantic HTML</code>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Node CLI</span>
+            <span class="tag">Span Row 2</span>
+          </div>
+          <div class="card-links">
+            <a href="#" class="btn btn-primary">npm install &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4: STANDARD CARD (1 col, 1 row) -->
+      <article class="bento-card card-standard card-yellow">
+        <div class="card-badge">STANDARD (1x1)</div>
+        <div class="card-content">
+          <h2>Markdown Parser</h2>
+          <p class="desc">Zero-dependency client-side markdown compiler with syntax highlighting.</p>
+          <div class="tag-row">
+            <span class="tag">Regex</span>
+            <span class="tag">1x1 Cell</span>
+          </div>
+          <div class="card-links">
+            <a href="#" class="btn btn-sm">Explore</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 5: STANDARD CARD (1 col, 1 row) -->
+      <article class="bento-card card-standard card-purple">
+        <div class="card-badge">STANDARD (1x1)</div>
+        <div class="card-content">
+          <h2>Color Tokenizer</h2>
+          <p class="desc">Generates accessible WCAG compliant color palettes from single base hex seeds.</p>
+          <div class="tag-row">
+            <span class="tag">WCAG 2.1</span>
+            <span class="tag">1x1 Cell</span>
+          </div>
+          <div class="card-links">
+            <a href="#" class="btn btn-sm">Explore</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 6: WIDE CARD (Spans 2 cols, 1 row) -->
+      <article class="bento-card card-wide card-teal">
+        <div class="card-badge">WIDE SUMMARY (2x1)</div>
+        <div class="card-content">
+          <h2>Micro-Benchmark Suite</h2>
+          <p class="desc">
+            Automated browser rendering benchmarks testing DOM re-layouts with CSS Grid vs Flexbox vs inline-block.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Performance</span>
+            <span class="tag">CSS Grid Span 2</span>
+            <span class="tag">Chrome Trace</span>
+          </div>
+          <div class="card-links">
+            <a href="#" class="btn btn-primary">View Benchmark Reports &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="portfolio-footer">
+    <p>&copy; <time datetime="2026">2026</time> P12 Portfolio Projects Grid &bull; Advanced CSS Grid with Asymmetric Bento Spans</p>
+  </footer>
+
+</body>
+</html>

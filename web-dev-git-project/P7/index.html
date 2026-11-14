@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P7: Design Tokens &amp; Typography System in CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Hero Header -->
+  <header class="doc-header">
+    <div class="container">
+      <span class="badge badge-primary">CSS Architecture</span>
+      <h1 class="heading-1">Design Tokens &amp; Typography System</h1>
+      <p class="text-lead">
+        A centralized foundation built using CSS Custom Properties (Variables) for colors, 
+        modular type scale, spacing intervals, and component tokens.
+      </p>
+    </div>
+  </header>
+
+  <main class="container doc-main">
+
+    <!-- 1. Color Tokens Section -->
+    <section class="token-section">
+      <h2 class="heading-2">1. Color Design Tokens</h2>
+      <p class="text-muted">Defined in <code>:root</code> to enforce consistency across backgrounds, borders, and text.</p>
+
+      <div class="swatches-grid">
+        
+        <div class="swatch-card">
+          <div class="swatch-box" style="background-color: var(--color-primary);"></div>
+          <div class="swatch-info">
+            <strong>--color-primary</strong>
+            <code>#1e90ff</code> (Dodger Blue)
+          </div>
+        </div>
+
+        <div class="swatch-card">
+          <div class="swatch-box" style="background-color: var(--color-secondary);"></div>
+          <div class="swatch-info">
+            <strong>--color-secondary</strong>
+            <code>#ff6347</code> (Tomato Red)
+          </div>
+        </div>
+
+        <div class="swatch-card">
+          <div class="swatch-box" style="background-color: var(--color-accent);"></div>
+          <div class="swatch-info">
+            <strong>--color-accent</strong>
+            <code>#3cb371</code> (Medium Sea Green)
+          </div>
+        </div>
+
+        <div class="swatch-card">
+          <div class="swatch-box" style="background-color: var(--color-warning);"></div>
+          <div class="swatch-info">
+            <strong>--color-warning</strong>
+            <code>#ffa500</code> (Orange)
+          </div>
+        </div>
+
+        <div class="swatch-card">
+          <div class="swatch-box" style="background-color: var(--color-surface);"></div>
+          <div class="swatch-info">
+            <strong>--color-surface</strong>
+            <code>#ffffff</code> (Pure White)
+          </div>
+        </div>
+
+        <div class="swatch-card">
+          <div class="swatch-box" style="background-color: var(--color-bg-page);"></div>
+          <div class="swatch-info">
+            <strong>--color-bg-page</strong>
+            <code>#f4f6f9</code> (Soft Canvas)
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. Typography Scale Section -->
+    <section class="token-section">
+      <h2 class="heading-2">2. Modular Typography System</h2>
+      <p class="text-muted">Proportional scale ensuring consistent visual hierarchy and readable line-heights.</p>
+
+      <div class="type-scale-list">
+        
+        <div class="type-row">
+          <span class="type-label">H1 &bull; --font-size-3xl (2.25rem / 36px)</span>
+          <h1 class="heading-1">The quick brown fox jumps over the lazy dog</h1>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">H2 &bull; --font-size-2xl (1.85rem / 29.6px)</span>
+          <h2 class="heading-2">The quick brown fox jumps over the lazy dog</h2>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">H3 &bull; --font-size-xl (1.5rem / 24px)</span>
+          <h3 class="heading-3">The quick brown fox jumps over the lazy dog</h3>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">H4 &bull; --font-size-lg (1.25rem / 20px)</span>
+          <h4 class="heading-4">The quick brown fox jumps over the lazy dog</h4>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">Lead Paragraph &bull; --font-size-md (1.125rem / 18px)</span>
+          <p class="text-lead">Leading paragraphs introduce sections with higher emphasis and comfortable line height.</p>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">Body Text &bull; --font-size-base (1rem / 16px)</span>
+          <p class="text-body">Standard body text optimized for long-form reading comprehension across all device form-factors.</p>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">Small / Caption &bull; --font-size-sm (0.875rem / 14px)</span>
+          <p class="text-small">Metadata, captions, legal disclaimers, and auxiliary footnotes.</p>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">Code / Monospace &bull; --font-family-mono</span>
+          <p>Inline sample: <code>const greeting = "Hello, CSS Tokens!";</code> or keyboard key: <kbd>Ctrl</kbd> + <kbd>C</kbd></p>
+        </div>
+
+        <div class="type-row">
+          <span class="type-label">Blockquote</span>
+          <blockquote class="quote">
+            "Design tokens are the visual atoms of the design system — specifically, they are named entities that store visual design attributes."
+          </blockquote>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. Spacing System Section -->
+    <section class="token-section">
+      <h2 class="heading-2">3. Spacing Scale Tokens</h2>
+      <p class="text-muted">Based on an 8-point harmonic grid system.</p>
+
+      <div class="spacing-visualizer">
+        <div class="spacing-bar"><span style="width: var(--space-1);"></span> <code>--space-1: 4px</code></div>
+        <div class="spacing-bar"><span style="width: var(--space-2);"></span> <code>--space-2: 8px</code></div>
+        <div class="spacing-bar"><span style="width: var(--space-3);"></span> <code>--space-3: 16px</code></div>
+        <div class="spacing-bar"><span style="width: var(--space-4);"></span> <code>--space-4: 24px</code></div>
+        <div class="spacing-bar"><span style="width: var(--space-5);"></span> <code>--space-5: 32px</code></div>
+        <div class="spacing-bar"><span style="width: var(--space-6);"></span> <code>--space-6: 48px</code></div>
+      </div>
+    </section>
+
+    <!-- 4. Real Components Built Exclusively with Tokens -->
+    <section class="token-section">
+      <h2 class="heading-2">4. Live Components Built With Tokens</h2>
+      <p class="text-muted">Notice how padding, margin, border-radius, font sizes, and colors come directly from CSS variables.</p>
+
+      <div class="components-demo-grid">
+        
+        <!-- Component: Card 1 -->
+        <article class="demo-card">
+          <span class="badge badge-primary">Primary Token Card</span>
+          <h3 class="heading-3">Card Title One</h3>
+          <p class="text-body">
+            This card demonstrates the unified harmony created by using tokenized padding, borders, 
+            and typographic hierarchy.
+          </p>
+          <div class="card-actions">
+            <button class="btn btn-primary">Primary Action</button>
+            <button class="btn btn-outline">Dismiss</button>
+          </div>
+        </article>
+
+        <!-- Component: Card 2 -->
+        <article class="demo-card">
+          <span class="badge badge-secondary">Secondary Accent</span>
+          <h3 class="heading-3">Card Title Two</h3>
+          <p class="text-body">
+            Notice how button hover states and borders stay strictly in sync with defined CSS variables.
+          </p>
+          <div class="card-actions">
+            <button class="btn btn-secondary">Secondary Action</button>
+            <button class="btn btn-outline">Details</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="doc-footer">
+    <div class="container">
+      <p>&copy; <time datetime="2026">2026</time> P7 Design Tokens &amp; Typography System &bull; Clean CSS Foundations</p>
+    </div>
+  </footer>
+
+</body>
+</html>

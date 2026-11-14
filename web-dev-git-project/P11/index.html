@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P11: Newspaper-Style Three-Column Layout with CSS Grid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==============================================================
+       NEWSPAPER GRID WRAPPER
+       ============================================================== -->
+  <div class="newspaper-container">
+
+    <!-- 1. MASTHEAD / NEWSPAPER HEADER (Grid Column: 1 / -1) -->
+    <header class="masthead">
+      <div class="masthead-top">
+        <span>Vol. XXIV &bull; No. 104</span>
+        <span class="masthead-motto">"All the Code That's Fit to Ship"</span>
+        <span>Price: Free &bull; Global Edition</span>
+      </div>
+
+      <div class="masthead-title">
+        <h1>THE CHRONICLE OF CSS</h1>
+        <p class="masthead-tagline">The Daily Gazette for Modern Web Layouts &amp; Architecture</p>
+      </div>
+
+      <div class="masthead-meta">
+        <span class="meta-date">Friday, November 13, 2026</span>
+        <span class="meta-edition">Morning Late City Edition</span>
+        <span class="meta-weather">☀️ Sunny 74°F / 23°C</span>
+      </div>
+    </header>
+
+    <!-- 2. BREAKING NEWS BANNER (Grid Column: 1 / -1) -->
+    <div class="breaking-banner">
+      <span class="breaking-pill">FLASH</span>
+      <p class="breaking-text">
+        <strong>W3C CONSORTIUM ANNOUNCES:</strong> Two-dimensional CSS Grid layouts now officially power over 90% of complex web interfaces!
+      </p>
+    </div>
+
+    <!-- 3. LEFT COLUMN: LOCAL NEWS & BRIEFINGS -->
+    <aside class="col-left">
+      <div class="section-label">THE WIRE &bull; BRIEFINGS</div>
+
+      <article class="news-item">
+        <h3>Flexbox and Grid Forge Alliance</h3>
+        <p>
+          Developers rejoice as hybrid layouts combining Grid for macro-structure and Flexbox for micro-components 
+          reach peak industry adoption.
+        </p>
+        <span class="item-time">10 mins ago</span>
+      </article>
+
+      <article class="news-item">
+        <h3>Subgrid Gaining Universal Support</h3>
+        <p>
+          Nested child elements can now align directly with parent grid lines without hacky wrapper workarounds.
+        </p>
+        <span class="item-time">45 mins ago</span>
+      </article>
+
+      <!-- Mini Ad / Notice -->
+      <div class="newspaper-ad">
+        <h4>WANTED: CSS ARTISANS</h4>
+        <p>Seeking developers who write semantic HTML without excessive divs. Inquire within.</p>
+      </div>
+
+      <article class="news-item">
+        <h3>Browser Compatibility Ticker</h3>
+        <p>Older float-based clearfixes are officially retired in favor of native <code>gap</code> and <code>fr</code> units.</p>
+        <span class="item-time">2 hours ago</span>
+      </article>
+    </aside>
+
+    <!-- 4. CENTER COLUMN: LEAD HEADLINE & FEATURE STORY -->
+    <main class="col-center">
+      <div class="section-label">FRONT PAGE FEATURE</div>
+
+      <article class="lead-story">
+        <h2 class="lead-headline">CSS GRID MASTERED: 3-COLUMN LAYOUTS PROVEN BULLETPROOF</h2>
+        <p class="lead-subhead">How a single property replaced decades of fragile floating clearfixes and table hacks</p>
+
+        <!-- Graphic / News Photo Placeholder -->
+        <figure class="lead-figure">
+          <svg width="100%" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="600" height="200" fill="#eae6df"/>
+            <!-- Grid Lines Visual -->
+            <line x1="50" y1="20" x2="550" y2="20" stroke="#777" stroke-width="2" stroke-dasharray="4"/>
+            <line x1="50" y1="180" x2="550" y2="180" stroke="#777" stroke-width="2" stroke-dasharray="4"/>
+            <line x1="200" y1="20" x2="200" y2="180" stroke="#b71c1c" stroke-width="3"/>
+            <line x1="400" y1="20" x2="400" y2="180" stroke="#b71c1c" stroke-width="3"/>
+            <text x="300" y="95" font-family="Georgia, serif" font-size="20" text-anchor="middle" fill="#222" font-weight="bold">grid-template-columns: 1fr 2fr 1fr;</text>
+            <text x="300" y="125" font-family="sans-serif" font-size="13" text-anchor="middle" fill="#666">Explicit column tracks handle both height and width seamlessly</text>
+          </svg>
+          <figcaption>Fig 1.1: Visual schematic of the 3-column CSS Grid track distribution engine.</figcaption>
+        </figure>
+
+        <div class="lead-body-columns">
+          <p>
+            <span class="drop-cap">T</span>he introduction of CSS Grid represents the greatest leap in digital page composition 
+            since the printing press revolutionized print journalism in 1440. By providing a truly two-dimensional coordinate system, 
+            designers can define explicit columns and rows simultaneously.
+          </p>
+          <p>
+            Unlike older techniques that relied on <code>float: left</code> with complicated clearance hacks, CSS Grid 
+            handles equal-height columns natively. When one column grows, adjacent columns stretch proportionally without overflow.
+          </p>
+        </div>
+
+        <!-- Pull Quote -->
+        <blockquote class="newspaper-quote">
+          "CSS Grid didn't just give us columns; it brought print-grade editorial discipline to the browser window."
+          <cite>&mdash; Chief Layout Architect</cite>
+        </blockquote>
+
+        <p>
+          With properties like <code>grid-template-columns: minmax(220px, 1fr) 2.5fr minmax(220px, 1fr);</code>, 
+          the layout automatically adapts to widescreen monitors while ensuring content never collapses below legible line lengths.
+        </p>
+      </article>
+    </main>
+
+    <!-- 5. RIGHT COLUMN: OPINION & MARKET WATCH -->
+    <aside class="col-right">
+      <div class="section-label">OPINION &amp; ANALYSIS</div>
+
+      <article class="opinion-item">
+        <h3>Why Floats Should Stay in Retirement</h3>
+        <p class="byline">By Eleanor Vance, Senior Front-End Columnist</p>
+        <p>
+          For over fifteen years we used <code>overflow: hidden</code> and <code>clearfix:after</code> hacks. 
+          Today's students have it simpler and far more powerful.
+        </p>
+      </article>
+
+      <div class="section-label">DAILY STACK TICKER</div>
+
+      <div class="ticker-box">
+        <div class="ticker-row"><span>HTML5 Semantics</span> <strong class="green">+4.8%</strong></div>
+        <div class="ticker-row"><span>CSS Grid Level 2</span> <strong class="green">+6.2%</strong></div>
+        <div class="ticker-row"><span>Float Clearfixes</span> <strong class="red">-99.4%</strong></div>
+        <div class="ticker-row"><span>Table Layouts</span> <strong class="red">-100%</strong></div>
+      </div>
+
+      <div class="section-label">CROSSWORD TEASER</div>
+      <div class="crossword-teaser">
+        <p><strong>1 Across:</strong> A 2-dimensional CSS layout specification (4 letters):</p>
+        <span class="crossword-answer">G &bull; R &bull; I &bull; D</span>
+      </div>
+    </aside>
+
+    <!-- 6. NEWSPAPER FOOTER (Grid Column: 1 / -1) -->
+    <footer class="newspaper-footer">
+      <div class="footer-rule"></div>
+      <p>&copy; <time datetime="2026">2026</time> The Chronicle of CSS &bull; Published Daily via CSS Grid Layout Engine &bull; All Rights Reserved</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>

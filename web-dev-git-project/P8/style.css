@@ -1,0 +1,369 @@
+/* ==========================================================================
+   P8: Sticky Navbar and Card Overlay Using CSS Positioning
+   Friendly beginner colors with clear visual positioning demonstrations
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333333;
+  background-color: #f0f4f8; /* Soft blue-gray */
+}
+
+/* --------------------------------------------------
+   Top Non-Sticky Announcement Banner
+   -------------------------------------------------- */
+.top-announcement {
+  background-color: #ffeb3b; /* bright yellow */
+  color: #333333;
+  text-align: center;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #fbc02d;
+}
+
+/* --------------------------------------------------
+   1. STICKY NAVBAR (position: sticky)
+   Stays pinned at top: 0 once scrolled past top banner
+   -------------------------------------------------- */
+.sticky-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100; /* Stays above normal page content */
+  background-color: #20b2aa; /* lightseagreen */
+  border-bottom: 3px solid #008080; /* teal */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+}
+
+.nav-brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.15);
+  transition: background-color 0.2s;
+}
+
+.nav-links a:hover {
+  background-color: #ffffff;
+  color: #008080;
+}
+
+/* --------------------------------------------------
+   Main Page Layout
+   -------------------------------------------------- */
+.page-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content-block {
+  background-color: #ffffff;
+  border: 2px solid #ccd6dd;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.content-block h2 {
+  color: #1a5276;
+  border-bottom: 2px solid #20b2aa;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+.position-types {
+  margin: 15px 0 0 20px;
+}
+
+.position-types li {
+  margin-bottom: 8px;
+}
+
+/* --------------------------------------------------
+   2. CARD OVERLAYS (position: relative + absolute)
+   -------------------------------------------------- */
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Parent container: MUST have position: relative */
+.overlay-card {
+  position: relative;
+  overflow: hidden; /* Clips the sliding absolute hover overlay */
+  flex: 1 1 250px;
+  background-color: #ffffff;
+  border: 2px solid #b0bec5;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.overlay-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Visual Image Placeholder */
+.card-visual {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-blue {
+  background-color: #bbdefb; /* light blue */
+}
+
+.visual-green {
+  background-color: #c8e6c9; /* light green */
+}
+
+.visual-coral {
+  background-color: #ffccbc; /* light coral */
+}
+
+.visual-icon {
+  font-size: 3rem;
+}
+
+.card-body {
+  padding: 16px 16px 36px 16px; /* extra bottom padding for bottom bar */
+}
+
+.card-body h3 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Absolute Badge (top-right) */
+.card-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.badge-hot {
+  background-color: #ff5722;
+  color: #ffffff;
+}
+
+.badge-pro {
+  background-color: #7b1fa2;
+  color: #ffffff;
+}
+
+.badge-free {
+  background-color: #2e7d32;
+  color: #ffffff;
+}
+
+/* Absolute Bottom Bar */
+.card-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #eceff1;
+  border-top: 1px solid #cfd8dc;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  color: #607d8b;
+  font-weight: bold;
+}
+
+/* Absolute Full Hover Overlay */
+.card-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(32, 178, 170, 0.95); /* semi-transparent teal */
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  transform: translateY(100%); /* Hidden below card */
+  transition: transform 0.3s ease-in-out;
+  z-index: 3;
+}
+
+.overlay-card:hover .card-hover-overlay {
+  transform: translateY(0); /* Slides up on hover */
+}
+
+.card-hover-overlay h4 {
+  font-size: 1.15rem;
+}
+
+.card-hover-overlay p {
+  font-size: 0.85rem;
+  color: #e0f2f1;
+}
+
+.overlay-btn {
+  background-color: #ffffff;
+  color: #008080;
+  border: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.overlay-btn:hover {
+  background-color: #ffeb3b;
+  color: #333;
+}
+
+/* --------------------------------------------------
+   Scroll Section (Tall box for sticky testing)
+   -------------------------------------------------- */
+.scroll-milestones {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 150px; /* Big gaps to trigger scrolling */
+  padding: 30px 10px;
+}
+
+.milestone-box {
+  padding: 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.box-1 {
+  background-color: #fff9c4; /* light yellow */
+  border: 2px dashed #fbc02d;
+  color: #f57f17;
+}
+
+.box-2 {
+  background-color: #e1bee7; /* light purple */
+  border: 2px dashed #ab47bc;
+  color: #6a1b9a;
+}
+
+.box-3 {
+  background-color: #c8e6c9; /* light green */
+  border: 2px dashed #66bb6a;
+  color: #2e7d32;
+}
+
+/* --------------------------------------------------
+   Positioning Cheat Sheet Table
+   -------------------------------------------------- */
+.rules-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.rules-table th,
+.rules-table td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.rules-table th {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.rules-table tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* --------------------------------------------------
+   3. FIXED FLOATING ACTION BUTTON (position: fixed)
+   -------------------------------------------------- */
+.fixed-floating-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: #ff5722; /* deep orange */
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  border: 2px solid #ffffff;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.fixed-floating-btn:hover {
+  background-color: #e64a19;
+  transform: scale(1.1);
+}
+
+/* Footer */
+.page-footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 0.85rem;
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+}

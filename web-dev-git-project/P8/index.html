@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P8: Sticky Navbar &amp; Card Overlay Using CSS Positioning</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Banner (Non-sticky intro banner) -->
+  <div class="top-announcement">
+    📢 Welcome to P8: Master CSS Positioning (Static, Relative, Absolute, Fixed, Sticky)
+  </div>
+
+  <!-- 1. STICKY NAVBAR -->
+  <header class="sticky-nav">
+    <div class="nav-brand">📌 StickyNav Demo</div>
+    <nav class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#card-overlays">Card Overlays</a>
+      <a href="#scroll-section">Scroll Area</a>
+      <a href="#position-rules">Cheat Sheet</a>
+    </nav>
+  </header>
+
+  <main class="page-container">
+
+    <!-- Section: Overview -->
+    <section id="overview" class="content-block">
+      <h2>CSS Positioning Explained</h2>
+      <p>
+        CSS positioning allows you to take elements out of the normal document flow and place them precisely 
+        where needed. In this project, we demonstrate:
+      </p>
+      <ul class="position-types">
+        <li><strong><code>position: sticky</code></strong>: The navbar above behaves normally until you scroll, then stays pinned at <code>top: 0</code>.</li>
+        <li><strong><code>position: relative</code></strong>: Serves as the positioning boundary/coordinate parent for absolute children.</li>
+        <li><strong><code>position: absolute</code></strong>: Positions badges and hover overlay layers precisely within relative cards.</li>
+        <li><strong><code>position: fixed</code></strong>: The circular button in the bottom-right corner stays anchored to the viewport.</li>
+      </ul>
+    </section>
+
+    <!-- Section: Card Overlays -->
+    <section id="card-overlays" class="content-block">
+      <h2>Card Overlays (Position: Relative + Absolute)</h2>
+      <p>Hover over the cards below to see the absolute overlay slide up!</p>
+
+      <div class="cards-grid">
+        
+        <!-- Card 1: New Feature -->
+        <article class="overlay-card">
+          <!-- Absolute Badge -->
+          <div class="card-badge badge-hot">🔥 HOT</div>
+          
+          <!-- Card Image Container -->
+          <div class="card-visual visual-blue">
+            <span class="visual-icon">🚀</span>
+          </div>
+
+          <!-- Card Static Body -->
+          <div class="card-body">
+            <h3>Web Acceleration</h3>
+            <p>Techniques for lightning-fast webpage rendering and layout stability.</p>
+          </div>
+
+          <!-- Bottom Absolute Bar -->
+          <div class="card-bottom-bar">
+            <span>Module 2 &bull; Lesson 8</span>
+          </div>
+
+          <!-- Full Hover Overlay (Absolute) -->
+          <div class="card-hover-overlay">
+            <h4>Quick Inspection</h4>
+            <p>Positioned absolutely with <code>inset: 0</code> inside the relative card wrapper.</p>
+            <button class="overlay-btn">Explore Feature &rarr;</button>
+          </div>
+        </article>
+
+        <!-- Card 2: Pro Tip -->
+        <article class="overlay-card">
+          <!-- Absolute Badge -->
+          <div class="card-badge badge-pro">⭐ PRO</div>
+          
+          <!-- Card Image Container -->
+          <div class="card-visual visual-green">
+            <span class="visual-icon">🎨</span>
+          </div>
+
+          <!-- Card Static Body -->
+          <div class="card-body">
+            <h3>Responsive Canvas</h3>
+            <p>Adaptive component sizing using viewport units and fluid typography.</p>
+          </div>
+
+          <!-- Bottom Absolute Bar -->
+          <div class="card-bottom-bar">
+            <span>Module 2 &bull; Lesson 8</span>
+          </div>
+
+          <!-- Full Hover Overlay (Absolute) -->
+          <div class="card-hover-overlay">
+            <h4>Quick Inspection</h4>
+            <p>Hover trigger changes the CSS <code>transform: translateY(0)</code> smoothly.</p>
+            <button class="overlay-btn">Explore Feature &rarr;</button>
+          </div>
+        </article>
+
+        <!-- Card 3: Free Resource -->
+        <article class="overlay-card">
+          <!-- Absolute Badge -->
+          <div class="card-badge badge-free">🎁 FREE</div>
+          
+          <!-- Card Image Container -->
+          <div class="card-visual visual-coral">
+            <span class="visual-icon">📦</span>
+          </div>
+
+          <!-- Card Static Body -->
+          <div class="card-body">
+            <h3>Design System Kit</h3>
+            <p>Pre-built semantic structures and CSS design token templates ready to use.</p>
+          </div>
+
+          <!-- Bottom Absolute Bar -->
+          <div class="card-bottom-bar">
+            <span>Module 2 &bull; Lesson 8</span>
+          </div>
+
+          <!-- Full Hover Overlay (Absolute) -->
+          <div class="card-hover-overlay">
+            <h4>Quick Inspection</h4>
+            <p>Cards stay tidy with <code>overflow: hidden</code> on the relative parent.</p>
+            <button class="overlay-btn">Explore Feature &rarr;</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Section: Scroll Area for Testing Sticky Behavior -->
+    <section id="scroll-section" class="content-block scroll-tester">
+      <h2>Scroll Testing Playground</h2>
+      <p>
+        Notice how the navbar remains pinned to the top of the browser window as you scroll 
+        through this long section.
+      </p>
+      
+      <div class="scroll-milestones">
+        <div class="milestone-box box-1">Scroll Checkpoint 1: Keep scrolling down! ⬇️</div>
+        <div class="milestone-box box-2">Scroll Checkpoint 2: The navbar is still stuck to the top! 📌</div>
+        <div class="milestone-box box-3">Scroll Checkpoint 3: Fixed button in bottom right is always clickable! 🎯</div>
+      </div>
+    </section>
+
+    <!-- Section: Positioning Cheat Sheet -->
+    <section id="position-rules" class="content-block">
+      <h2>Positioning Rules Quick Reference</h2>
+      <table class="rules-table">
+        <thead>
+          <tr>
+            <th>Property Value</th>
+            <th>Document Flow</th>
+            <th>Reference Point</th>
+            <th>Common Use Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>static</code></td>
+            <td>Normal flow</td>
+            <td>Default browser placement</td>
+            <td>Standard document elements</td>
+          </tr>
+          <tr>
+            <td><code>relative</code></td>
+            <td>In normal flow</td>
+            <td>Self (original position)</td>
+            <td>Anchor for absolute children</td>
+          </tr>
+          <tr>
+            <td><code>absolute</code></td>
+            <td>Removed from flow</td>
+            <td>Nearest positioned ancestor</td>
+            <td>Card badges, modal overlays, tooltips</td>
+          </tr>
+          <tr>
+            <td><code>fixed</code></td>
+            <td>Removed from flow</td>
+            <td>Browser viewport</td>
+            <td>Back to top button, sticky chat head</td>
+          </tr>
+          <tr>
+            <td><code>sticky</code></td>
+            <td>In flow until scroll threshold</td>
+            <td>Scroll parent / viewport</td>
+            <td>Sticky navigation bars, table headers</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- 2. FIXED FLOATING ACTION BUTTON -->
+  <a href="#overview" class="fixed-floating-btn" title="Back to top">
+    ▲
+  </a>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <p>&copy; <time datetime="2026">2026</time> P8: Sticky Navbar and Card Overlay &bull; Built with CSS Positioning</p>
+  </footer>
+
+</body>
+</html>

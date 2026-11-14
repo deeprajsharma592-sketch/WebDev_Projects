@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P6: Full Portfolio Page Structure in Semantic HTML</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="#hero">💻 Deepraj<span>Dev</span></a>
+      </div>
+      
+      <!-- Primary Semantic Navigation -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Structure -->
+  <main class="portfolio-main">
+
+    <!-- 1. Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <h1>Hi, I'm Deepraj Sharma</h1>
+        <p class="hero-subtitle">Aspiring Full-Stack Web Developer &amp; Open Source Explorer</p>
+        <p class="hero-desc">
+          I build clean, semantic, and responsive websites using modern web standards.
+          Welcome to my digital workshop!
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. About Section -->
+    <section id="about" class="about-section">
+      <header class="section-header">
+        <h2>About Me</h2>
+        <p class="section-tagline">A short glimpse into who I am and what drives me</p>
+      </header>
+
+      <div class="about-grid">
+        <figure class="profile-figure">
+          <svg width="150" height="150" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="profile-avatar">
+            <rect width="120" height="120" rx="15" fill="#FFE4B5"/>
+            <circle cx="60" cy="50" r="25" fill="#20B2AA"/>
+            <circle cx="53" cy="47" r="3" fill="#FFF"/>
+            <circle cx="67" cy="47" r="3" fill="#FFF"/>
+            <path d="M53 58 Q60 65 67 58" stroke="#FFF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M30 105 C35 80, 85 80, 90 105" fill="#4682B4"/>
+          </svg>
+          <figcaption>Deepraj Sharma &bull; Web Learner</figcaption>
+        </figure>
+
+        <div class="about-text">
+          <p>
+            I am a self-driven web developer focusing on building a solid foundation in front-end fundamentals. 
+            I believe that mastering <strong>HTML semantics</strong> and <strong>CSS layouts</strong> is the most critical 
+            step before jumping into modern JavaScript frameworks.
+          </p>
+          <p>
+            Currently, I'm completing hands-on projects exploring <em>Box Model</em>, <em>CSS Positioning</em>, 
+            <em>Flexbox</em>, and <em>CSS Grid</em>. My approach is clean code, clarity over magic, and great developer ergonomics.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Projects Section (Semantic Articles) -->
+    <section id="projects" class="projects-section">
+      <header class="section-header">
+        <h2>Featured Projects</h2>
+        <p class="section-tagline">Real projects built with semantic HTML &amp; CSS</p>
+      </header>
+
+      <div class="projects-container">
+        
+        <!-- Project 1 -->
+        <article class="project-card">
+          <header class="project-card-header">
+            <h3>Markdown Note Keeper</h3>
+            <span class="project-badge">HTML / CSS / JS</span>
+          </header>
+          <p class="project-desc">
+            A lightweight in-browser markdown editor with live preview, auto-save to localStorage, 
+            and export to PDF options.
+          </p>
+          <div class="project-tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS Grid</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <footer class="project-card-footer">
+            <a href="#" class="project-link">&rarr; Live Demo</a>
+            <a href="#" class="project-link">&rarr; GitHub Repo</a>
+          </footer>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <header class="project-card-header">
+            <h3>Weather Forecast Widget</h3>
+            <span class="project-badge">Flexbox Layout</span>
+          </header>
+          <p class="project-desc">
+            A responsive weather dashboard fetching real-time meteorological data with dynamic 
+            hourly forecast and 7-day outlook.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Flexbox</span>
+            <span class="tag">REST API</span>
+            <span class="tag">Semantic HTML</span>
+          </div>
+          <footer class="project-card-footer">
+            <a href="#" class="project-link">&rarr; Live Demo</a>
+            <a href="#" class="project-link">&rarr; GitHub Repo</a>
+          </footer>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <header class="project-card-header">
+            <h3>Responsive Portfolio Starter</h3>
+            <span class="project-badge">CSS Tokens</span>
+          </header>
+          <p class="project-desc">
+            An accessible personal portfolio template featuring CSS custom property design tokens, 
+            fluid typography, and sticky navigation.
+          </p>
+          <div class="project-tags">
+            <span class="tag">CSS Variables</span>
+            <span class="tag">Accessibility</span>
+            <span class="tag">Mobile First</span>
+          </div>
+          <footer class="project-card-footer">
+            <a href="#" class="project-link">&rarr; Live Demo</a>
+            <a href="#" class="project-link">&rarr; GitHub Repo</a>
+          </footer>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 4. Skills Section -->
+    <section id="skills" class="skills-section">
+      <header class="section-header">
+        <h2>Skills &amp; Capabilities</h2>
+        <p class="section-tagline">What I work with every day</p>
+      </header>
+
+      <div class="skills-columns">
+        <article class="skills-column">
+          <h3>Frontend Development</h3>
+          <ul>
+            <li>HTML5 Semantic Tags &amp; Accessibility (ARIA)</li>
+            <li>CSS3 Flexbox, CSS Grid, Media Queries</li>
+            <li>Responsive Web Design (Mobile-First)</li>
+            <li>CSS Custom Properties (Design Tokens)</li>
+          </ul>
+        </article>
+
+        <article class="skills-column">
+          <h3>Tools &amp; Version Control</h3>
+          <ul>
+            <li>Git version control (branches, tags, commits)</li>
+            <li>GitHub repos &amp; pull requests</li>
+            <li>VS Code, Chrome DevTools inspect panel</li>
+            <li>Command line / zsh workflows</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. Contact Section with Semantic Form -->
+    <section id="contact" class="contact-section">
+      <header class="section-header">
+        <h2>Contact Me</h2>
+        <p class="section-tagline">Feel free to reach out for projects or questions</p>
+      </header>
+
+      <form class="contact-form" action="#" method="POST">
+        <fieldset>
+          <legend>Send a Message</legend>
+
+          <div class="form-group">
+            <label for="fullName">Your Full Name:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="e.g. Alex Smith" required>
+          </div>
+
+          <div class="form-group">
+            <label for="emailAddr">Your Email Address:</label>
+            <input type="email" id="emailAddr" name="emailAddr" placeholder="e.g. alex@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subjectSelect">Subject:</label>
+            <select id="subjectSelect" name="subjectSelect">
+              <option value="general">General Inquiry</option>
+              <option value="collab">Project Collaboration</option>
+              <option value="feedback">Feedback / Greeting</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="messageBody">Message:</label>
+            <textarea id="messageBody" name="messageBody" rows="4" placeholder="Write your message here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-submit">Submit Message</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <!-- Aside: Quick Announcement / Status Box -->
+    <aside class="portfolio-aside">
+      <h3>🚀 Quick Status</h3>
+      <p>Currently learning <strong>Module 3: CSS Layout Systems</strong> (Advanced Flexbox &amp; CSS Grid)!</p>
+    </aside>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h4>Deepraj Sharma</h4>
+        <p>Practicing clean semantic web development.</p>
+        <address>
+          New Delhi, India &bull; <a href="mailto:deepraj@example.com">deepraj@example.com</a>
+        </address>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <time datetime="2026">2026</time> Deepraj Sharma. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

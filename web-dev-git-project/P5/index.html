@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P5: Semantic Bio Page - Deepraj Sharma</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Page Header -->
+  <header class="bio-header">
+    <div class="header-content">
+      <figure class="avatar-figure">
+        <!-- SVG Avatar placeholder with friendly beginner styling -->
+        <svg class="avatar-img" width="120" height="120" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="48" fill="#87CEEB" stroke="#4682B4" stroke-width="4"/>
+          <circle cx="50" cy="38" r="18" fill="#FFE4B5" stroke="#CD853F" stroke-width="2"/>
+          <circle cx="43" cy="36" r="3" fill="#333"/>
+          <circle cx="57" cy="36" r="3" fill="#333"/>
+          <path d="M44 44 Q50 50 56 44" stroke="#D2691E" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M22 85 C25 62, 75 62, 78 85" fill="#4682B4"/>
+        </svg>
+        <figcaption class="avatar-caption">Deepraj Sharma</figcaption>
+      </figure>
+
+      <div class="header-text">
+        <h1 class="bio-name">Deepraj Sharma</h1>
+        <p class="bio-tagline">Junior Web Developer &amp; Tech Enthusiast</p>
+        <p class="bio-location">📍 New Delhi, India &bull; <mark class="status-badge">Open to Opportunities</mark></p>
+      </div>
+    </div>
+
+    <!-- Semantic Nav for on-page jump links -->
+    <nav class="bio-nav">
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education &amp; Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="bio-main">
+
+    <!-- About Section -->
+    <section id="about" class="bio-section">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm <strong>Deepraj</strong>, a passionate learner diving into the world of web development. 
+        I love understanding how the web works from the ground up—starting with <em>semantic HTML structure</em>, 
+        crisp <em>CSS styling</em>, and modern layout techniques.
+      </p>
+      <p>
+        My goal is to craft user-friendly, accessible, and responsive websites that look great on any screen.
+        When I am not coding, you will find me reading tech blogs, exploring open source, and learning new tools.
+      </p>
+
+      <!-- Semantic Details / Summary tag for fun facts -->
+      <details class="fun-facts">
+        <summary>Click here to reveal 3 fun facts about me!</summary>
+        <ul>
+          <li>☕ Coffee enthusiast: Powered by black coffee and curiosity.</li>
+          <li>🎮 Casual gamer: Enjoy strategy and puzzle games on weekends.</li>
+          <li>⌨️ Mechanical keyboard fan: Clicky blue switches are my favorite.</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bio-section">
+      <h2>Technical Skills</h2>
+      <div class="skills-container">
+        
+        <article class="skill-category">
+          <h3>Core Technologies</h3>
+          <ul class="skills-list">
+            <li><span class="skill-tag html-tag">HTML5 (Semantic Elements)</span></li>
+            <li><span class="skill-tag css-tag">CSS3 (Box Model, Flexbox, Grid)</span></li>
+            <li><span class="skill-tag js-tag">JavaScript Fundamentals</span></li>
+          </ul>
+        </article>
+
+        <article class="skill-category">
+          <h3>Tools &amp; Workflows</h3>
+          <ul class="skills-list">
+            <li><span class="skill-tag git-tag">Git &amp; GitHub</span></li>
+            <li><span class="skill-tag editor-tag">VS Code / DevTools</span></li>
+            <li><span class="skill-tag terminal-tag">Command Line &amp; Terminal</span></li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Education & Timeline Section -->
+    <section id="education" class="bio-section">
+      <h2>Education &amp; Learning Journey</h2>
+      
+      <article class="timeline-item">
+        <h3>Full-Stack Web Development Track</h3>
+        <p class="timeline-meta">
+          <time datetime="2026-09-01">September 2026</time> &ndash; <time datetime="2026-11-13">Present</time>
+        </p>
+        <p>
+          Mastering modern web foundations: Semantic markup, accessible page structure, 
+          CSS design tokens, Flexbox, and CSS Grid layouts.
+        </p>
+      </article>
+
+      <article class="timeline-item">
+        <h3>Bachelor of Computer Science / IT</h3>
+        <p class="timeline-meta">
+          <time datetime="2022-08-01">2022</time> &ndash; <time datetime="2026-06-01">2026</time>
+        </p>
+        <p>Focused on Data Structures, Algorithms, Computer Networks, and Database Management Systems.</p>
+      </article>
+    </section>
+
+    <!-- Aside: Inspirational Quote / Quick Highlights -->
+    <aside class="bio-aside">
+      <h3>💡 Favorite Developer Motto</h3>
+      <blockquote>
+        "First, solve the problem. Then, write the code."
+        <cite>&mdash; John Johnson</cite>
+      </blockquote>
+    </aside>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bio-section contact-section">
+      <h2>Get In Touch</h2>
+      <p>I am always excited to connect, collaborate, and learn together!</p>
+      
+      <!-- Semantic address tag -->
+      <address class="bio-address">
+        <p><strong>Email:</strong> <a href="mailto:deepraj@example.com">deepraj@example.com</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com" target="_blank" rel="noopener">github.com/deeprajsharma</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank" rel="noopener">linkedin.com/in/deeprajsharma</a></p>
+      </address>
+    </section>
+
+  </main>
+
+  <!-- Page Footer -->
+  <footer class="bio-footer">
+    <p>&copy; <time datetime="2026">2026</time> Deepraj Sharma. Built with 100% Semantic HTML5 &amp; CSS.</p>
+    <p><a href="#top" class="back-to-top">⬆ Back to Top</a></p>
+  </footer>
+
+</body>
+</html>

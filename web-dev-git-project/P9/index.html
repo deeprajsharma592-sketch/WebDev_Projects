@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P9: Responsive Navbar &amp; Card Grid Using Flexbox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       1. RESPONSIVE FLEXBOX NAVBAR
+       ========================================== -->
+  <header class="navbar-wrapper">
+    <nav class="flex-navbar">
+      
+      <!-- Logo Item -->
+      <div class="nav-logo">
+        <a href="#">⚡ Flexi<span>Craft</span></a>
+      </div>
+
+      <!-- Navigation Links List (Flex Container) -->
+      <ul class="nav-menu">
+        <li><a href="#about" class="nav-link active">Home</a></li>
+        <li><a href="#cards" class="nav-link">Cards Grid</a></li>
+        <li><a href="#flex-rules" class="nav-link">Flex Properties</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- CTA Action Button (Flex Item) -->
+      <div class="nav-cta">
+        <a href="#signup" class="btn-signup">Get Started</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- ==========================================
+       MAIN CONTENT
+       ========================================== -->
+  <main class="page-container">
+
+    <!-- Hero / Concept Intro -->
+    <section class="intro-section">
+      <div class="intro-text">
+        <h1>Responsive Flexbox Navbar &amp; Equal-Height Card Grid</h1>
+        <p>
+          Flexbox (Flexible Box Layout) is designed for <strong>1-dimensional layouts</strong>—aligning elements 
+          along either a row or a column. Resize your browser window to see the navbar wrap smoothly and the 
+          card grid re-calculate widths dynamically!
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         2. FLEXBOX CARD GRID
+         ========================================== -->
+    <section id="cards" class="cards-section">
+      <div class="section-heading">
+        <h2>Flexbox Responsive Card Grid</h2>
+        <p>Using <code>display: flex</code>, <code>flex-wrap: wrap</code>, and <code>flex: 1 1 260px</code></p>
+      </div>
+
+      <div class="flex-cards-container">
+        
+        <!-- Card 1 (Short text) -->
+        <article class="flex-card card-blue">
+          <div class="card-top">
+            <span class="card-pill">Foundation</span>
+            <h3>Main Axis &amp; Cross Axis</h3>
+            <p>
+              Flexbox operates along two axes: the <em>main axis</em> (defined by <code>flex-direction</code>) 
+              and the perpendicular <em>cross axis</em>.
+            </p>
+          </div>
+          <!-- Card bottom always anchored by column flex -->
+          <div class="card-bottom">
+            <span class="card-tag">#flex-direction</span>
+            <button class="btn-card">Read Guide &rarr;</button>
+          </div>
+        </article>
+
+        <!-- Card 2 (Medium text) -->
+        <article class="flex-card card-green">
+          <div class="card-top">
+            <span class="card-pill">Alignment</span>
+            <h3>Justify Content vs Align Items</h3>
+            <p>
+              <code>justify-content</code> distributes spare space along the main axis, while 
+              <code>align-items</code> handles cross-axis positioning like stretch, center, or flex-start.
+            </p>
+          </div>
+          <div class="card-bottom">
+            <span class="card-tag">#alignment</span>
+            <button class="btn-card">Read Guide &rarr;</button>
+          </div>
+        </article>
+
+        <!-- Card 3 (Long text - tests equal height) -->
+        <article class="flex-card card-orange">
+          <div class="card-top">
+            <span class="card-pill">Growth &amp; Shrink</span>
+            <h3>Flex-Grow, Shrink &amp; Basis</h3>
+            <p>
+              The shorthand <code>flex: 1 1 260px</code> instructs cards to expand to fill leftover space, 
+              shrink when cramped below ideal width, and start at a baseline of 260px. Notice how this card has much 
+              more text, but its bottom button remains perfectly aligned with the other cards!
+            </p>
+          </div>
+          <div class="card-bottom">
+            <span class="card-tag">#flexibility</span>
+            <button class="btn-card">Read Guide &rarr;</button>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="flex-card card-purple">
+          <div class="card-top">
+            <span class="card-pill">Responsive</span>
+            <h3>Wrapping with Flex-Wrap</h3>
+            <p>
+              By default, flex items try to fit on a single line. Adding <code>flex-wrap: wrap</code> allows items 
+              to flow gracefully into subsequent rows on smaller viewports.
+            </p>
+          </div>
+          <div class="card-bottom">
+            <span class="card-tag">#responsive</span>
+            <button class="btn-card">Read Guide &rarr;</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Flexbox Reference Card -->
+    <section id="flex-rules" class="info-section">
+      <h2>Flexbox Key Properties Summary</h2>
+      <div class="props-comparison">
+        <div class="prop-col">
+          <h3>Container Properties</h3>
+          <ul>
+            <li><code>display: flex</code></li>
+            <li><code>flex-direction: row | column</code></li>
+            <li><code>flex-wrap: wrap | nowrap</code></li>
+            <li><code>justify-content: space-between | center</code></li>
+            <li><code>align-items: stretch | center</code></li>
+            <li><code>gap: 20px</code></li>
+          </ul>
+        </div>
+        <div class="prop-col">
+          <h3>Item Properties</h3>
+          <ul>
+            <li><code>flex-grow: 1</code> (take free space)</li>
+            <li><code>flex-shrink: 1</code> (shrink if tight)</li>
+            <li><code>flex-basis: 260px</code> (starting size)</li>
+            <li><code>flex: 1 1 260px</code> (shorthand)</li>
+            <li><code>align-self: flex-end</code></li>
+            <li><code>order: 1</code></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <time datetime="2026">2026</time> P9 Responsive Navbar and Card Grid &bull; Flexbox Mastery</p>
+  </footer>
+
+</body>
+</html>

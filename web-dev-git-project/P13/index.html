@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P13: Choosing Between Flexbox and Grid for a Shared Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Hero Header -->
+  <header class="page-header">
+    <div class="container">
+      <span class="badge">Module 3 &bull; Final Project</span>
+      <h1>Choosing Between Flexbox and CSS Grid</h1>
+      <p class="lead">
+        Learn when to reach for Flexbox (1D, content-first) versus CSS Grid (2D, layout-first), 
+        and how to orchestrate both together in modern responsive web applications.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ==============================================================
+         1. THE CORE PHILOSOPHY / GOLDEN RULE
+         ============================================================== -->
+    <section class="card-section">
+      <h2>1. The Golden Rule of Layout Systems</h2>
+      <div class="rule-cards">
+        
+        <div class="rule-card rule-flex">
+          <div class="rule-header">
+            <span class="pill pill-green">FLEXBOX (1-DIMENSIONAL)</span>
+            <h3>Content-Driven (Row OR Column)</h3>
+          </div>
+          <p>
+            Best for distributing space among items along <strong>a single axis</strong>. 
+            Items size themselves based on their own content and wrap independently.
+          </p>
+          <ul class="rule-list">
+            <li>&check; Navigation bars &amp; menu items</li>
+            <li>&check; Button groups &amp; form input rows</li>
+            <li>&check; Vertically centering an element</li>
+            <li>&check; Equal-height card internals (anchoring footers)</li>
+          </ul>
+        </div>
+
+        <div class="rule-card rule-grid">
+          <div class="rule-header">
+            <span class="pill pill-purple">CSS GRID (2-DIMENSIONAL)</span>
+            <h3>Layout-Driven (Rows AND Columns)</h3>
+          </div>
+          <p>
+            Best for strict alignment across <strong>both rows and columns simultaneously</strong>. 
+            The parent container strictly dictates column lines and row heights.
+          </p>
+          <ul class="rule-list">
+            <li>&check; Full-page macro skeleton (Header, Sidebar, Main, Footer)</li>
+            <li>&check; Bento-box asymmetric dashboard grids</li>
+            <li>&check; Photo galleries with strict column alignment</li>
+            <li>&check; Magazine &amp; newspaper column structures</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================================
+         2. LIVE COMPARISON EXPERIMENT: 5 CARDS IN FLEX VS GRID
+         ============================================================== -->
+    <section class="card-section">
+      <h2>2. Live Behavior Comparison: 5 Cards</h2>
+      <p class="section-intro">
+        Notice what happens to the 4th and 5th cards on the second row:
+      </p>
+
+      <!-- Experiment A: Flexbox Wrap -->
+      <div class="demo-box">
+        <h3 class="demo-title flex-title">Approach A: Flexbox Container (<code>display: flex; flex-wrap: wrap;</code>)</h3>
+        <p class="demo-caption">
+          Notice: In Flexbox, items in the second row stretch or center independently. They <strong>do not</strong> 
+          align strictly with the column lines of row 1!
+        </p>
+        
+        <div class="flex-test-container">
+          <div class="test-item flex-item">Item 1 (Row 1)</div>
+          <div class="test-item flex-item">Item 2 (Row 1)</div>
+          <div class="test-item flex-item">Item 3 (Row 1)</div>
+          <div class="test-item flex-item">Item 4 (Wraps &amp; Stretches!)</div>
+          <div class="test-item flex-item">Item 5 (Wraps &amp; Stretches!)</div>
+        </div>
+      </div>
+
+      <!-- Experiment B: CSS Grid -->
+      <div class="demo-box">
+        <h3 class="demo-title grid-title">Approach B: CSS Grid Container (<code>grid-template-columns: repeat(3, 1fr);</code>)</h3>
+        <p class="demo-caption">
+          Notice: In Grid, items 4 and 5 <strong>strictly conform</strong> to columns 1 and 2, leaving column 3 empty. 
+          Alignment remains rigid and consistent across both dimensions.
+        </p>
+        
+        <div class="grid-test-container">
+          <div class="test-item grid-item">Item 1 (Col 1, Row 1)</div>
+          <div class="test-item grid-item">Item 2 (Col 2, Row 1)</div>
+          <div class="test-item grid-item">Item 3 (Col 3, Row 1)</div>
+          <div class="test-item grid-item">Item 4 (Locked in Col 1)</div>
+          <div class="test-item grid-item">Item 5 (Locked in Col 2)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+         3. HYBRID ARCHITECTURE (THE REAL-WORLD STANDARD)
+         Grid for Macro Layout + Flexbox for Micro Layout
+         ============================================================== -->
+    <section class="card-section">
+      <h2>3. The Ideal Pattern: Hybrid Layout Architecture</h2>
+      <p class="section-intro">
+        In real production applications, you never pick one or the other—you combine them! 
+        CSS Grid defines the outer macro shell, while Flexbox handles every micro component inside.
+      </p>
+
+      <div class="hybrid-app-shell">
+        
+        <!-- Header: Placed by Grid, styled internally with Flexbox -->
+        <header class="shell-header">
+          <div class="shell-brand">🎨 App Studio</div>
+          <nav class="shell-flex-nav">
+            <a href="#">Projects</a>
+            <a href="#">Analytics</a>
+            <a href="#">Settings</a>
+          </nav>
+        </header>
+
+        <!-- Sidebar: Placed by Grid, styled internally with Flexbox column -->
+        <aside class="shell-sidebar">
+          <div class="sidebar-title">Menu (Flex Column)</div>
+          <ul class="shell-flex-sidebar-menu">
+            <li><a href="#" class="active">📁 All Files</a></li>
+            <li><a href="#">⭐ Starred</a></li>
+            <li><a href="#">🗑️ Trash</a></li>
+          </ul>
+        </aside>
+
+        <!-- Main Workspace: Placed by Grid -->
+        <main class="shell-main">
+          <h3>Main Workspace Area</h3>
+          <p>
+            The outer layout is mapped using <code>grid-template-areas: "header header" "sidebar main" "footer footer"</code>.
+          </p>
+
+          <!-- Micro Cards inside Main using Flexbox -->
+          <div class="shell-cards-flex">
+            <div class="micro-card">
+              <h4>Card Alpha</h4>
+              <p>Positioned with Flexbox micro-spacing.</p>
+              <div class="micro-footer">
+                <span>Status: OK</span>
+                <button class="btn-micro">Run</button>
+              </div>
+            </div>
+
+            <div class="micro-card">
+              <h4>Card Beta</h4>
+              <p>Notice how footer button anchors cleanly.</p>
+              <div class="micro-footer">
+                <span>Status: Busy</span>
+                <button class="btn-micro">Run</button>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!-- Footer: Placed by Grid, styled internally with Flexbox row -->
+        <footer class="shell-footer">
+          <span>Grid Cell: Footer</span>
+          <span>Aligned via Flexbox space-between</span>
+        </footer>
+
+      </div>
+    </section>
+
+    <!-- ==============================================================
+         4. DECISION MATRIX / QUICK CHEAT SHEET
+         ============================================================== -->
+    <section class="card-section">
+      <h2>4. Flexbox vs. CSS Grid Decision Matrix</h2>
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Scenario / Requirement</th>
+            <th>Recommended System</th>
+            <th>Reasoning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Page scaffolding (Header, Sidebar, Main, Footer)</td>
+            <td><strong class="text-purple">CSS Grid</strong></td>
+            <td>2D coordination across rows and columns simultaneously.</td>
+          </tr>
+          <tr>
+            <td>Navbar with brand left, search center, links right</td>
+            <td><strong class="text-green">Flexbox</strong></td>
+            <td>1D row distribution with <code>justify-content: space-between</code>.</td>
+          </tr>
+          <tr>
+            <td>Photo gallery with equal square tiles</td>
+            <td><strong class="text-purple">CSS Grid</strong></td>
+            <td><code>repeat(auto-fit, minmax(200px, 1fr))</code> maintains strict columns.</td>
+          </tr>
+          <tr>
+            <td>Tag / badge cloud of unknown length chips</td>
+            <td><strong class="text-green">Flexbox</strong></td>
+            <td><code>flex-wrap: wrap</code> lets chips take their own natural widths.</td>
+          </tr>
+          <tr>
+            <td>Card with image, title, text, and button at the bottom</td>
+            <td><strong class="text-green">Flexbox</strong></td>
+            <td><code>flex-direction: column; justify-content: space-between;</code></td>
+          </tr>
+          <tr>
+            <td>Bento-box portfolio with 2x2 and 2x1 items</td>
+            <td><strong class="text-purple">CSS Grid</strong></td>
+            <td>Asymmetric spans (<code>span 2</code>) and <code>grid-auto-flow: dense</code>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer class="doc-footer">
+    <p>&copy; <time datetime="2026">2026</time> P13 Shared Layout Guide &bull; Module 3 Layout Systems Mastery</p>
+  </footer>
+
+</body>
+</html>

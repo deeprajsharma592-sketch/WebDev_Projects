@@ -1,0 +1,312 @@
+/* P5: Semantic Bio Page Stylesheet */
+/* Basic styling with friendly beginner colors */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f8ff; /* aliceblue */
+  color: #333333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header Section */
+.bio-header {
+  background-color: #add8e6; /* lightblue */
+  border: 3px solid #4682b4; /* steelblue */
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-figure {
+  margin: 0;
+}
+
+.avatar-caption {
+  font-size: 0.85rem;
+  color: #2f4f4f; /* darkslategray */
+  margin-top: 4px;
+  font-weight: bold;
+}
+
+.bio-name {
+  color: #1e3f66;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.bio-tagline {
+  font-size: 1.1rem;
+  color: #2b5b84;
+  margin-bottom: 5px;
+}
+
+.bio-location {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.status-badge {
+  background-color: #98fb98; /* palegreen */
+  color: #006400;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  border: 1px solid #2e8b57;
+}
+
+/* Navigation inside header */
+.bio-nav {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 2px dashed #4682b4;
+}
+
+.bio-nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.bio-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #4682b4; /* steelblue */
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.bio-nav a:hover {
+  background-color: #1c527e;
+  text-decoration: underline;
+}
+
+/* Main Container */
+.bio-main {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Common Section Styling */
+.bio-section {
+  background-color: #ffffff;
+  border: 2px solid #b0c4de; /* lightsteelblue */
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.bio-section h2 {
+  color: #2e6b9e;
+  border-bottom: 2px solid #ff7f50; /* coral */
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+/* Details & Summary */
+.fun-facts {
+  margin-top: 15px;
+  background-color: #fff8dc; /* cornsilk */
+  border: 1px solid #deb887; /* burlywood */
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.fun-facts summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: #8b4513;
+}
+
+.fun-facts ul {
+  margin-top: 8px;
+  margin-left: 20px;
+}
+
+/* Skills Section */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.skill-category {
+  flex: 1 1 300px;
+  background-color: #fdf5e6; /* oldlace */
+  border: 1px solid #ffd700; /* gold */
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.skill-category h3 {
+  font-size: 1.05rem;
+  color: #b8860b;
+  margin-bottom: 8px;
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.html-tag {
+  background-color: #ffe4e1; /* mistyrose */
+  color: #c0392b;
+  border: 1px solid #e74c3c;
+}
+
+.css-tag {
+  background-color: #e0f7fa; /* cyan 50 */
+  color: #0277bd;
+  border: 1px solid #29b6f6;
+}
+
+.js-tag {
+  background-color: #fff9c4; /* yellow 100 */
+  color: #f57f17;
+  border: 1px solid #fbc02d;
+}
+
+.git-tag {
+  background-color: #fbe9e7; /* deep orange 50 */
+  color: #d84315;
+  border: 1px solid #ff7043;
+}
+
+.editor-tag {
+  background-color: #ede7f6; /* deep purple 50 */
+  color: #512da8;
+  border: 1px solid #9575cd;
+}
+
+.terminal-tag {
+  background-color: #eceff1; /* blue grey 50 */
+  color: #37474f;
+  border: 1px solid #90a4ae;
+}
+
+/* Education / Timeline */
+.timeline-item {
+  border-left: 4px solid #4682b4;
+  padding-left: 12px;
+  margin-bottom: 15px;
+}
+
+.timeline-item h3 {
+  font-size: 1.1rem;
+  color: #1e3f66;
+}
+
+.timeline-meta {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+/* Aside Section */
+.bio-aside {
+  background-color: #e6e6fa; /* lavender */
+  border: 2px dashed #9370db; /* mediumpurple */
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+}
+
+.bio-aside h3 {
+  color: #4b0082;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.bio-aside blockquote {
+  font-style: italic;
+  color: #333;
+}
+
+.bio-aside cite {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: #555;
+  font-weight: bold;
+}
+
+/* Address / Contact */
+.bio-address {
+  font-style: normal;
+  margin-top: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.bio-address p {
+  margin-bottom: 6px;
+}
+
+.bio-address a {
+  color: #1e88e5;
+  text-decoration: none;
+}
+
+.bio-address a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Section */
+.bio-footer {
+  max-width: 800px;
+  margin: 20px auto 0 auto;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+}
+
+.back-to-top {
+  display: inline-block;
+  margin-top: 8px;
+  color: #4682b4;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.back-to-top:hover {
+  text-decoration: underline;
+}
